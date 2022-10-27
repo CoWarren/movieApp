@@ -9,7 +9,7 @@ async function getMovie(name) {
 
     if(data.total_results > 0) {  //making sure that the name is valid
 
-        console.log("This is the data: " + JSON.stringify(data, null, 5))
+        //console.log("This is the data: " + JSON.stringify(data, null, 5))
         
         const movieData = data.results
 
@@ -46,39 +46,18 @@ async function getMovie(name) {
         return(resultsArray);
         
     } else {
-        console.log("Invalid Name, Please Try Again")
+        //console.log("Invalid Name, Please Try Again")
         return("Invalid Name, Please Try Again");
     }
 }
 
-function traversal(dataset) { //for loop function
+function traversal(dataset) { //for loop function to save on time
     const dataToTraverse = dataset.results
     for(let i = 0; i < dataToTraverse.length; i++) {
         const frontMovieData = {"image": dataToTraverse[i].poster_path ,"title" : dataToTraverse[i].title, "movie_id": dataToTraverse[i].id, "overview": dataToTraverse[i].overview, "rating": dataToTraverse[i].vote_average, "release_date": dataToTraverse[i].release_date}
         frontPageArray.push(frontMovieData)
     }
 }
-
-
-// async function frontPageMovies2(filterType) {
-//     if(filterType === "Top Rated") {
-//         let response4 =  await fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=faac618f8b55fe67036720b29d0f430d&language=en-US&page=1")
-//         let data4 = await response4.json()
-//         //console.log(`These are the top rated movies: ${JSON.stringify(data4, null,4)}`)
-//         return data4;
-//     } else if(filterType == "Popular") {
-//         console.log("ferge")
-//         let response5 =  await fetch("https://api.themoviedb.org/3/movie/popular?api_key=faac618f8b55fe67036720b29d0f430d&language=en-US&page=1")
-//         let data5 = await response5.json()
-//         //console.log(data5)
-//         return data5;
-//     } else if(filterType == "upcoming") {
-//         let response6 =  await fetch("https://api.themoviedb.org/3/movie/upcoming?api_key=faac618f8b55fe67036720b29d0f430d&language=en-US&page=1")
-//         let data6 = await response6.json()
-//         return data6;
-//         //console.log(data6)
-//     }
-// }
 
 async function frontPageMovies(filterType) {
     switch(filterType) {
@@ -99,6 +78,8 @@ async function frontPageMovies(filterType) {
             return data6;
     }
 }
+
+// fucntion to fill the slideshow array with info
 async function slideShowDataFunction(numberOfSlides) {
     let response = await fetch("https://api.themoviedb.org/3/movie/popular?api_key=faac618f8b55fe67036720b29d0f430d&language=en-US&page=1")
     let data = await response.json()
@@ -109,7 +90,7 @@ async function slideShowDataFunction(numberOfSlides) {
     }
 }
 
-
+// the following 3 async functions actually return the relevant arrays
 
 async function outputFrontPage(filterName) { //front page movies displayed by default
     if(filterName === undefined) {
@@ -117,19 +98,22 @@ async function outputFrontPage(filterName) { //front page movies displayed by de
     }
     const output2 = await frontPageMovies(filterName)
     console.log(`This is the front page movies array: ${JSON.stringify(frontPageArray,null,6)}`)
+    return output2;
 }
 
 async function outputMovie(movieName) { //
     const output1 = await getMovie(movieName)
-    console.log(`This is the final function output: ${JSON.stringify(output1, null, 4)}`)
+    console.log(`This is the search output: ${JSON.stringify(output1, null, 4)}`)
+    return output1;
 }
 
 async function outputSlideShow(num) {
     const output3 = await slideShowDataFunction(num)
     console.log(`This array contains the information for the slideshow: ${JSON.stringify(slideShowArray, null, 4)}`)
+    return output3;
 }
 
 
-//outputMovie("jack reacher")
-//outputFrontPage()
-outputSlideShow(4)
+outputMovie("jack reacher") //has no default
+outputFrontPage() //By default will shows a page of popular movies
+outputSlideShow(4) // has no defualt must be set manually
