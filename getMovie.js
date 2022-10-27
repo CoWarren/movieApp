@@ -26,12 +26,12 @@ async function getMovie(name) {
                     console.log(`This is the ssP[j] ${JSON.stringify(ssP[j], null, 4)}`)
                     const streaming = ssP[j]
                     for(let k = 0; k < streaming.length; k++) { //going through the providers array
-                        for(let n in streaming[k]) { //going through each object in the providers array so that the correct details can be extracted
+                        for(let n in streaming[k]) { //going through each object in the provider's array so that the correct details can be extracted
                             console.log(streaming[k])
                             providerObject = {"providerName": streaming[k].provider_name, "providerLogo": streaming[k].logo_path }
                             console.log(JSON.stringify(providerObject,null,4))
                         }
-                        individualMovie.providers.push(providerObject) //adds the providers details into the nested array 
+                        individualMovie.providers.push(providerObject) //adds the providers' details into the nested array 
                     } 
                 }
             } 
@@ -53,3 +53,5 @@ async function outputMovie(movieName) {
 }
 
 outputMovie("jack reacher")
+
+module.exports = outputMovie
