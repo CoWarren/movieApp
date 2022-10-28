@@ -27,10 +27,13 @@ h1{
 body{
     padding: 20vh;
     margin: 0;
+<<<<<<< HEAD
     height: 80vh;
     display:flex;
     justify-content: center;
     background-color: whitesmoke;
+=======
+>>>>>>> 59cf3cd57a6ffdd98d947ea923e496be156c389d
 }
 
 .slide-frame{
