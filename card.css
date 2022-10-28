@@ -1,0 +1,46 @@
+.rating::before {
+    content: "⭐";
+}
+
+.movie-card {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    border: 1px solid black;
+    border-radius: 2px;
+    width: 200px;
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.movie-image {
+    height: 300px;
+}
+
+.movie-container {
+    padding-left: 7px;
+    padding-right: 7px;
+    background-color: #303030;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+
+.movie-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    font-weight: bold;
+}
+
+body {
+    background-color: black;
+}
