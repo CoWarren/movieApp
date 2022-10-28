@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banner</title>
-    <link href="style.css" rel="stylesheet">   
+    <link href="style.css" rel="stylesheet">
     <link href="card.css" rel="stylesheet">
+    <script src="slider.js" defer></script>
     <script src="createCard.js" defer></script>
     <script type="module" src="getMovie.js" defer></script>
 </head>
-
     <header>
         <div class="banner">
             <div class="banner_content">
@@ -18,51 +18,20 @@
                 <h1>Movies: movie banner</h1>
         </div> 
     </header>
-
 <body>
-    <div class="slider">
-        <div class="slides">
-
-            <input type="radio" name="slide-btn" id="btn1">
-            <input type="radio" name="slide-btn" id="btn2">
-            <input type="radio" name="slide-btn" id="btn3">
-
-            <div class ="slide first">
+    <main>
+    <h2>auto slider</h2>
+    <div class="slider-frame">
+        <div class="slide-image">
+            <div class="img-container">
                 <img src="assets/imagefilm1.jpg" alt="Joker">
             </div>
-
-            <div class ="slide">
+            <div class="img-container">
                 <img src="assets/imagesfilm2.jpg" alt="PulpFiction">
             </div>
-     
-            <div class ="slide">
+            <div class="img-container">
                 <img src="assets/imagefilm3.jpg" alt="Jaws">
             </div>
-
-    <div class="navigation-auto">
-        <div class="auto-btn1"></div>
-        <div class="auto-btn2"></div>
-        <div class="auto-btn3"></div>
-        <div class="auto-btn4"></div>
-    </div>
-
-    <div class="navigation-manual">
-        <label for="btn1" class="manual-btn"></label>
-        <label for="btn2" class="manual-btn"></label>
-        <label for="btn3" class="manual-btn"></label>
-    </div>
-
-    <script type="text/Javascript">
-        ar counter =1;
-    setInterval(function(){
-    document.getElementById('radio' + counter).checkout = true;
-    counter++;
-    if (counter > 3){
-  counter = 1;
-    }
-}, 5000);
-    </script>
-    
         </div>
     </div>
 
