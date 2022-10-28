@@ -1,9 +1,8 @@
-//const movies = [ 
-//    { "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3QBhiRykpFQP4thOZC1ugZqZPiGl-iF3OQ2zUG6L7CImpVU18", "title": "Scary Movie 2", "rating": "4.2", "streamingServices": "Netflix, Prime Video" }, 
-//    { "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnHxC5rmn9c0DyXM5htwUrAuc5YRfclpFNVggYfpyHuGADDvpX", "title": "The Fifth Element", "rating": "4.5", "streamingServices": "Disney" }, 
-//    { "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNGiJl2EmHXCH7NhnDrevKTDejQeWIDaIGs_pgwRt_7VNSckOv", "title": "Friday", "rating": "4.7", "streamingServices": "Prime Video, Disney" } ]
+const movies = [ 
+    { "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3QBhiRykpFQP4thOZC1ugZqZPiGl-iF3OQ2zUG6L7CImpVU18", "title": "Scary Movie 2", "rating": "4.2", "streamingServices": "Netflix, Prime Video" }, 
+    { "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnHxC5rmn9c0DyXM5htwUrAuc5YRfclpFNVggYfpyHuGADDvpX", "title": "The Fifth Element", "rating": "4.5", "streamingServices": "Disney" }, 
+    { "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNGiJl2EmHXCH7NhnDrevKTDejQeWIDaIGs_pgwRt_7VNSckOv", "title": "Friday", "rating": "4.7", "streamingServices": "Prime Video, Disney" } ]
 
-//Uncomment above and below to see example
 
 const main = document.querySelector('.main')
 
@@ -42,6 +41,6 @@ let createMovieCard = ({image, title, rating, streamingServices}) => {
     main.appendChild(movie)
 }
 
-//movies.forEach(movie => {
-//    createMovieCard(movie);
-//})
+movies.forEach(movie => {
+    createMovieCard(movie);
+})
