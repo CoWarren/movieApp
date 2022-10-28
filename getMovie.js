@@ -1,6 +1,6 @@
 const resultsArray = []
 
-async function getMovie(name) {
+async function getMovie(name) { 
     const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=faac618f8b55fe67036720b29d0f430d&query=${name}`)
     const data = await response.json()
     var providerObject;
@@ -14,7 +14,16 @@ async function getMovie(name) {
 
         for(let i = 0; i < movieData.length; i++) {   //getting the movie info
 
-            const individualMovie = {"image": movieData[i].poster_path ,"title" : movieData[i].title, "movie_id": movieData[i].id, "overview": movieData[i].overview, "rating": movieData[i].vote_average, "release_date": movieData[i].release_date, "providers": []}
+            const individualMovie = {
+                "image": movieData[i].poster_path,
+                "title" : movieData[i].title,
+                "movie_id": movieData[i].id, 
+                "overview": movieData[i].overview, 
+                "rating": movieData[i].vote_average, 
+                "release_date": movieData[i].release_date, 
+                "providers": []
+            }
+
             //console.log(individualMovie)
 
             const getMovie_id = movieData[i].id
@@ -39,6 +48,9 @@ async function getMovie(name) {
         }
 
         console.log(`Here is the results array: ${JSON.stringify(resultsArray, null, 4)}`)
+       resultsArray.map((obj) => {
+            createMovieCard(obj) 
+        }) 
         return(resultsArray);
         
     } else {
@@ -49,9 +61,12 @@ async function getMovie(name) {
 
 async function outputMovie(movieName) {
     const output1 = await getMovie(movieName)
-    console.log(`This is the final fucntion output: ${JSON.stringify(output1, null, 4)}`)
+    console.log(`This is the final fuscntion output: ${JSON.stringify(output1, null, 4)}`)
 }
 
-outputMovie("jack reacher")
-
-module.exports = outputMovie
+// outputMovie("jack reacher")
+const button = document.querySelector('button')
+button.addEventListener('click', () =>{
+    const input = document.querySelector('input').value
+    outputMovie(input)
+})
