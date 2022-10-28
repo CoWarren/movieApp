@@ -12,6 +12,8 @@ body{
     height: 500px;
     border-radius: 10px;
     overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .slides{
@@ -110,4 +112,27 @@ body{
   #radio4:checked ~ .navigation-auto .auto-btn4{
     background: #40D3DC;
   }
+
+ .banner {
+  margin-bottom: 15px;
+  background-color: #303030;
+  color: white;
+ }
+
+ .banner_content{
+    padding:16px;
+    max-width: 1000px;
+    display: flex;
+    align-items: center;
+}
+
+.banner_text{
+    flex-grow: 1;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.search {
+  margin-left: auto;
+  margin-right: auto;
+}
         
