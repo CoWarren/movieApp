@@ -4,13 +4,11 @@ body{
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background: #23E3C9;
   }
   
   .slider{
-    width: 800px;
+    width: 1000px;
     height: 500px;
-    border-radius: 10px;
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
@@ -32,14 +30,14 @@ body{
   }
   
   .slide img{
-    width: 800px;
+    width: 1000px;
     height: 500px;
   }
   
   
   .navigation-manual{
     position: absolute;
-    width: 800px;
+    width: 1000px;
     margin-top: -40px;
     display: flex;
     justify-content: center;
@@ -81,7 +79,7 @@ body{
   .navigation-auto{
     position: absolute;
     display: flex;
-    width: 800px;
+    width: 1000px;
     justify-content: center;
     margin-top: 460px;
   }
@@ -132,7 +130,7 @@ body{
 }
 
 .search {
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
 }
-        
